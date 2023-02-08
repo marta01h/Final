@@ -40,19 +40,6 @@ namespace shop10
                         return true;
                 }
             return false;
-        }
-        private static void Create()
-        {
-            Console.Clear();
-            Menu.Meni(createmenutext + ": " + Aut.username, MainClass.CUBPcontent);
-            BookeepingentryObject newe = new BookeepingentryObject();
-            while (Control.key.Key != ConsoleKey.Escape)
-            {
-                ChoseUserpos = Menu.MenuCUBP(newe, ChoseUserpos, false);//true Create
-            }
-            Console.Clear();
-            Menu.Meni(MainClass.bookeepingentrytext + ": " + Aut.username, MainClass.CRUDcontent);
-        }
         private static void Dlete()
         {
 
@@ -96,17 +83,4 @@ namespace shop10
         }
         private static void Update()
         {
-
-            Console.Clear();
-            Menu.Meni(updatemenutext + ": " + Aut.username, MainClass.CUBPcontent);
-            BookeepingentryObject newe = new BookeepingentryObject();
-            while (Control.key.Key != (ConsoleKey)MainClass.keybinds.Enter)
-            {
-                ChoseUserpos = Menu.MenuCUBP(newe, ChoseUserpos, true);//true Update
-            }
-            Console.Clear();
-            Menu.Meni(MainClass.bookeepingentrytext + ": " + Aut.username, MainClass.CRUDcontent);
-
-        }
-    }
 }
