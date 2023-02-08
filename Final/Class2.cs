@@ -63,10 +63,6 @@ namespace shop10
                 Control.ReadKey(TabulatBookeepingentry.Finde.Count + 1);
                 Control.MenuArrow(TabulatBookeepingentry.Finde.Count + 1);
                 if (Control.key.Key == (ConsoleKey)MainClass.keybinds.Enter && Control.YCursorPos - 2 != 0)
-                {
-                    ChoseUser = TabulatBookeepingentry.Finde[Control.YCursorPos - 3];
-                    ChoseUserpos = Control.YCursorPos - 3;
-                }
                 else if (Control.key.Key == (ConsoleKey)MainClass.keybinds.Enter && Control.YCursorPos - 2 == 0)
                 {
                     Console.SetCursorPosition(9, Control.YCursorPos);
