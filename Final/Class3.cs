@@ -173,69 +173,6 @@ internal static class Menu
         }
         return ChoseUserpos;
     }
-    public static int MenuCUWM(GoodGodObject newe, int ChoseUserpos, bool CorU)
-    {
-
-        Control.ReadKey(MainClass.CUWMcontent.Split("\n").Length);
-        Control.MenuArrow(MainClass.CUWMcontent.Split("\n").Length);
-        if (Control.key.Key == ConsoleKey.Enter)
-        {
-            Console.SetCursorPosition(MainClass.CUWMcontent.Split("\n")[Control.YCursorPos - 2].Length, Control.YCursorPos);
-            string text = null;
-            if (Control.YCursorPos - 2 != 5)
-                text = Console.ReadLine();
-            switch (Control.YCursorPos - 2)
-            {
-                case 0:
-                    try { newe.id = UInt32.Parse(text); }
-                    catch
-                    {
-                        Console.SetCursorPosition(0, MainClass.CUWMcontent.Split("\n").Length + 2);
-                        Console.WriteLine("Вводите число в ID и roole");
-                    }
-                    break;
-                case 1:
-                    newe.name = text;
-                    break;
-                case 2:
-                    try { newe.cost = UInt32.Parse(text); }
-                    catch
-                    {
-                        Console.SetCursorPosition(0, MainClass.CUWMcontent.Split("\n").Length + 2);
-                        Console.WriteLine("Вводите число в ID и roole");
-                    }
-                    break;
-                case 3:
-                    try { newe.count = UInt32.Parse(text); }
-                    catch
-                    {
-                        Console.SetCursorPosition(0, MainClass.CUWMcontent.Split("\n").Length + 2);
-                        Console.WriteLine("Вводите число в ID и roole");
-                    }
-                    break;
-                case 4:
-                    Console.SetCursorPosition(0, MainClass.CUWMcontent.Split("\n").Length + 2);
-                    Console.WriteLine("                          ");
-                    if (newe.id.ToString() != null && newe.name != null && newe.cost.ToString() != null && newe.count.ToString() != null)
-                    {
-                        List<GoodGodObject> checusers = Sterealizer.desteruser<List<GoodGodObject>>(Startname.God);
-                        if (CorU)
-                        {
-                            checusers.RemoveAt(ChoseUserpos);
-                        }
-                        checusers.Add(newe);
-                        Sterealizer.steruser(checusers, Startname.God);
-                    }
-                    else
-                    {
-                        Console.SetCursorPosition(0, MainClass.CUWMcontent.Split("\n").Length + 2);
-                        Console.WriteLine("Заполните все поля");
-                    }
-                    break;
-            }
-        }
-        return ChoseUserpos;
-    }
     public static int MenuCUBP(BookeepingentryObject newe, int ChoseUserpos, bool CorU)
     {
 
