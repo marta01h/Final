@@ -66,36 +66,7 @@ internal class Admin : CRUD
             ChoseUserposDelit = ChoseUserpos;
             Sterealizer.steruser(checusers, Startname.Users);
         }
-    }
-    private static void Read()
-    {
-        string find = null;
-        string findteg = null;
-        string text = null;
-        Console.Clear();
-        Menu.Meni(readmenutext + ": " + Aut.username, TabulatAdmin.ListUsers(find, findteg, hadtabulate));
-        while (Control.key.Key != (ConsoleKey)MainClass.keybinds.Escape)
-        {
-            Control.ReadKey(TabulatAdmin.Finde.Count + 1);
-            Control.MenuArrow(TabulatAdmin.Finde.Count + 1);
-            if (Control.key.Key == (ConsoleKey)MainClass.keybinds.Enter && Control.YCursorPos - 2 != 0)
-            {
-                ChoseUser = TabulatAdmin.Finde[Control.YCursorPos - 3];
-                ChoseUserpos = Control.YCursorPos - 3;
-            }
-            else if (Control.key.Key == (ConsoleKey)MainClass.keybinds.Enter && Control.YCursorPos - 2 == 0)
-            {
-                Console.SetCursorPosition(9, Control.YCursorPos);
-                text = Console.ReadLine();
-                findteg = text.Split(": ")[0];
-                if (text.Split(": ").Length == 2)
-                    find = text.Split(": ")[1];
-                Console.Clear();
-                Menu.Meni(readmenutext + ": " + Aut.username, TabulatAdmin.ListUsers(find, findteg, hadtabulate));
-            }
-        }
-        Console.Clear();
-        Menu.Meni(MainClass.adminmenutext + ": " + Aut.username, MainClass.CRUDcontent);
+      }
     }
     private static void Update()
     {
